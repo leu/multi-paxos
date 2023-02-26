@@ -59,7 +59,6 @@ def start(config) do
 end
 
 defp next(self) do
-  ballot_num = self.ballot_num
   self = receive do
     {:propose, s, c} ->
       proposal_exists = Enum.reduce(self.proposals, false,
@@ -69,27 +68,29 @@ defp next(self) do
         if self.active do
           spawn(Commander, :start, [self.config, self(), self.acceptors, self.replicas, {self.ballot_num, s, c}])
           send(self.config.monitor, {:COMMANDER_SPAWNED, self.config.node_num})
-
         end
         self
       else
         self
       end
     {:adopted, ballot_num, pvals} ->
-      self = self |> proposals(update(self.proposals, pmax(pvals)))
-      for {s, c} <- self.proposals do
-        spawn(Commander, :start, [self.config, self(), self.acceptors, self.replicas, {self.ballot_num, s, c}])
-        send(self.config.monitor, {:COMMANDER_SPAWNED, self.config.node_num})
-
+      if ballot_num == self.ballot_num do
+        self = self |> proposals(update(self.proposals, pmax(pvals)))
+        for {s, c} <- self.proposals do
+          spawn(Commander, :start, [self.config, self(), self.acceptors, self.replicas, {self.ballot_num, s, c}])
+          send(self.config.monitor, {:COMMANDER_SPAWNED, self.config.node_num})
+        end
+        self |> active(true)
+      else
+        self
       end
-      self |> active(true)
     {:preempted, {r, leader}} ->
-      if {r, leader} > self.ballot_num do
+      {self_r, self_leader} = self.ballot_num
+      if r > self_r or (r == self_r and leader > self_leader) do
         self = self |> active(false)
         self = self |> ballot_num({r + 1, self()})
         spawn(Scout, :start, [self.config, self(), self.acceptors, self.ballot_num])
         send(self.config.monitor, {:SCOUT_SPAWNED, self.config.node_num})
-
         self
       else
         self
