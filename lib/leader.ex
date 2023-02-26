@@ -6,6 +6,7 @@ defp active(self, v) do Map.put(self, :active, v) end
 defp ballot_num(self, v) do Map.put(self, :ballot_num, v) end
 defp acceptors(self, v) do Map.put(self, :acceptors, v) end
 defp replicas(self, v) do Map.put(self, :replicas, v) end
+defp active_commanders(self, v) do Map.put(self, :active_commanders, v) end
 
 defp pmax(pvals) do
   map = Enum.reduce(pvals, %{},
@@ -43,7 +44,8 @@ def start(config) do
     replicas:   [],
     ballot_num: {0, self()},
     active:     false,
-    proposals:  []
+    proposals:  [],
+    active_commanders: []
   }
 
   self = receive do
@@ -76,10 +78,12 @@ defp next(self) do
     {:adopted, ballot_num, pvals} ->
       if ballot_num == self.ballot_num do
         self = self |> proposals(update(self.proposals, pmax(pvals)))
-        for {s, c} <- self.proposals do
+        new_commanders = for {s, c} <- self.proposals, into: [], do: (
           spawn(Commander, :start, [self.config, self(), self.acceptors, self.replicas, {self.ballot_num, s, c}])
           send(self.config.monitor, {:COMMANDER_SPAWNED, self.config.node_num})
-        end
+          {self.ballot_num, s, c})
+        # end
+        self = self |> active_commanders(new_commanders ++ self.active_commanders)
         self |> active(true)
       else
         self
@@ -87,6 +91,8 @@ defp next(self) do
     {:preempted, {r, leader}} ->
       {self_r, self_leader} = self.ballot_num
       if r > self_r or (r == self_r and leader > self_leader) do
+        send leader, {:ping, self()}
+        wait_on_leader(leader, self())
         self = self |> active(false)
         self = self |> ballot_num({r + 1, self()})
         spawn(Scout, :start, [self.config, self(), self.acceptors, self.ballot_num])
@@ -95,9 +101,27 @@ defp next(self) do
       else
         self
       end
+    {:commander_finished, ballot_num, s, c} ->
+      self |> active_commanders(self.active_commanders -- [{ballot_num, s, c}])
+    {:ping, waiting_leader} ->
+      if length(self.active_commanders) > 0 do
+        send waiting_leader, {:ping_back}
+      end
+      self
   end
 
   self |> next()
+end
+
+defp wait_on_leader(leader, self) do
+  receive do
+    {:ping_back} ->
+      Process.sleep(100)
+      send leader, {:ping, self}
+      wait_on_leader(leader, self)
+  after
+    1_000 -> nil
+  end
 end
 
 end

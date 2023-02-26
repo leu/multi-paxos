@@ -23,8 +23,6 @@ defmodule Commander do
       send(acceptor, {:p2a, self(), {at_b, s, c}})
     end
 
-    # for
-
     self |> next()
   end
 
