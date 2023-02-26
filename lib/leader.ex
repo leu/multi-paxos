@@ -45,7 +45,7 @@ def start(config) do
     ballot_num: {0, self()},
     active:     false,
     proposals:  [],
-    active_commanders: []
+    active_commanders: MapSet.new()
   }
 
   self = receive do
@@ -68,9 +68,9 @@ defp next(self) do
       if !proposal_exists do
         self = self |> proposals([{s, c}] ++ self.proposals)
         if self.active do
-          spawn(Commander, :start, [self.config, self(), self.acceptors, self.replicas, {self.ballot_num, s, c}])
+          pid = spawn(Commander, :start, [self.config, self(), self.acceptors, self.replicas, {self.ballot_num, s, c}])
           send(self.config.monitor, {:COMMANDER_SPAWNED, self.config.node_num})
-          self |> active_commanders([{self.ballot_num, s, c}] ++ self.active_commanders)
+          self |> active_commanders(MapSet.put(self.active_commanders, pid))
         else
           self
         end
@@ -80,11 +80,11 @@ defp next(self) do
     {:adopted, ballot_num, pvals} ->
       if ballot_num == self.ballot_num do
         self = self |> proposals(update(self.proposals, pmax(pvals)))
-        new_commanders = for {s, c} <- self.proposals, into: [], do: (
-          spawn(Commander, :start, [self.config, self(), self.acceptors, self.replicas, {self.ballot_num, s, c}])
+        new_commanders = for {s, c} <- self.proposals, into: MapSet.new(), do: (
+          pid = spawn(Commander, :start, [self.config, self(), self.acceptors, self.replicas, {self.ballot_num, s, c}])
           send(self.config.monitor, {:COMMANDER_SPAWNED, self.config.node_num})
-          {self.ballot_num, s, c})
-        self = self |> active_commanders(new_commanders ++ self.active_commanders)
+          pid)
+        self = self |> active_commanders(MapSet.union(new_commanders,  self.active_commanders))
         self |> active(true)
       else
         self
@@ -102,10 +102,10 @@ defp next(self) do
       else
         self
       end
-    {:commander_finished, ballot_num, s, c} ->
-      self |> active_commanders(self.active_commanders -- [{ballot_num, s, c}])
+    {:COMMANDER_FINISHED, pid} ->
+      self |> active_commanders(MapSet.delete(self.active_commanders, pid))
     {:ping, waiting_leader} ->
-      if length(self.active_commanders) > 0 do
+      if MapSet.size(self.active_commanders) > 0 do
         send waiting_leader, {:ping_back}
       end
       self
@@ -117,11 +117,11 @@ end
 defp wait_on_leader(leader, self) do
   receive do
     {:ping_back} ->
-      Process.sleep(200)
+      Process.sleep(500)
       send leader, {:ping, self}
       wait_on_leader(leader, self)
   after
-    1000 -> nil
+    2000 -> nil
   end
 end
 
