@@ -32,11 +32,13 @@ def next(self) do
         self = self |> waitfor(self.waitfor -- [a])
         if length(self.waitfor) < length(self.acceptors) / 2 do
           send self.leader, {:adopted, self.new_b, self.pvalues}
+          send self.config.monitor, {:SCOUT_FINISHED, self.config.node_num}
           exit(:normal)
         end
         self
       else
         send self.leader, {:preempted, b}
+        send self.config.monitor, {:SCOUT_FINISHED, self.config.node_num}
         exit(:normal)
       end
   end

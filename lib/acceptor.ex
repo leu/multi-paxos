@@ -9,7 +9,6 @@ def start(config) do
   Debug.starting(config)
 
   self = %{
-    config:     config,
     ballot_num: {-1, 0}, #we treat -1 as false
     accepted:   []
   }

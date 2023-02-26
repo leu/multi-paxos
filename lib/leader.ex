@@ -7,28 +7,6 @@ defp ballot_num(self, v) do Map.put(self, :ballot_num, v) end
 defp acceptors(self, v) do Map.put(self, :acceptors, v) end
 defp replicas(self, v) do Map.put(self, :replicas, v) end
 
-# defp pmax(pvals) do
-#   max_ps = %{}
-#   for {b, s, c} <- pvals do
-#     max_ps = if Map.has_key?(max_ps, s) do
-#       {b_i, c_i} = max_ps[s]
-#       if b_i > b do
-#         Map.put(max_ps, s, {b_i, c_i})
-#       else
-#         max_ps
-#       end
-#     else
-#       Map.put(max_ps, s, {b, c})
-#     end
-#   end
-
-#   new_pvals = []
-#   for {s, {_, c}} <- max_ps do
-#     new_pvals = [{s, c}] ++ new_pvals
-#   end
-#   new_pvals
-# end
-
 defp pmax(pvals) do
   map = Enum.reduce(pvals, %{},
     fn {b, s, c}, map ->
@@ -75,6 +53,7 @@ def start(config) do
   end
 
   spawn(Scout, :start, [config, self(), self.acceptors, self.ballot_num])
+  send(self.config.monitor, {:SCOUT_SPAWNED, self.config.node_num})
 
   self |> next()
 end
@@ -89,6 +68,8 @@ defp next(self) do
         self = self |> proposals([{s, c}] ++ self.proposals)
         if self.active do
           spawn(Commander, :start, [self.config, self(), self.acceptors, self.replicas, {self.ballot_num, s, c}])
+          send(self.config.monitor, {:COMMANDER_SPAWNED, self.config.node_num})
+
         end
         self
       else
@@ -98,6 +79,8 @@ defp next(self) do
       self = self |> proposals(update(self.proposals, pmax(pvals)))
       for {s, c} <- self.proposals do
         spawn(Commander, :start, [self.config, self(), self.acceptors, self.replicas, {self.ballot_num, s, c}])
+        send(self.config.monitor, {:COMMANDER_SPAWNED, self.config.node_num})
+
       end
       self |> active(true)
     {:preempted, {r, leader}} ->
@@ -105,6 +88,8 @@ defp next(self) do
         self = self |> active(false)
         self = self |> ballot_num({r + 1, self()})
         spawn(Scout, :start, [self.config, self(), self.acceptors, self.ballot_num])
+        send(self.config.monitor, {:SCOUT_SPAWNED, self.config.node_num})
+
         self
       else
         self
