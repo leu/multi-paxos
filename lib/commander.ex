@@ -38,12 +38,14 @@ defmodule Commander do
                 send(replica, {:decision, self.s, self.c})
               end
 
+              send(self.leader, {:commander_finished, self.at_b, self.s, self.c})
               send(self.config.monitor, {:COMMANDER_FINISHED, self.config.node_num})
               exit(:normal)
             end
 
             self
           else
+            send(self.leader, {:commander_finished, self.at_b, self.s, self.c})
             send(self.leader, {:preempted, b})
             send(self.config.monitor, {:COMMANDER_FINISHED, self.config.node_num})
             exit(:normal)
