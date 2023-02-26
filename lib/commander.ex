@@ -1,3 +1,5 @@
+# Daniel Simols (ds1920) and Benson Zhou (bz620)
+
 defmodule Commander do
   # Setters
   defp waitfor(self, v) do
