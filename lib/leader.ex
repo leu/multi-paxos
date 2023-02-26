@@ -82,7 +82,6 @@ defp next(self) do
           spawn(Commander, :start, [self.config, self(), self.acceptors, self.replicas, {self.ballot_num, s, c}])
           send(self.config.monitor, {:COMMANDER_SPAWNED, self.config.node_num})
           {self.ballot_num, s, c})
-        # end
         self = self |> active_commanders(new_commanders ++ self.active_commanders)
         self |> active(true)
       else
@@ -116,11 +115,11 @@ end
 defp wait_on_leader(leader, self) do
   receive do
     {:ping_back} ->
-      Process.sleep(100)
+      Process.sleep(1)
       send leader, {:ping, self}
       wait_on_leader(leader, self)
   after
-    1_000 -> nil
+    100 -> nil
   end
 end
 
