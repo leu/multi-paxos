@@ -35,7 +35,9 @@ defmodule Commander do
           if b == self.at_b do
             self = self |> waitfor(self.waitfor -- [a])
 
+            # checks if the message is from majority of acceptors
             if length(self.waitfor) < length(self.acceptors) / 2 do
+              # notifies replica of chose command in slot 
               for replica <- self.replicas do
                 send(replica, {:decision, self.s, self.c})
               end
@@ -47,8 +49,9 @@ defmodule Commander do
 
             self
           else
-            send(self.leader, {:COMMANDER_FINISHED, self()})
+            # notifies leader of ballot with higher number
             send(self.leader, {:preempted, b})
+            send(self.leader, {:COMMANDER_FINISHED, self()})
             send(self.config.monitor, {:COMMANDER_FINISHED, self.config.node_num})
             exit(:normal)
           end

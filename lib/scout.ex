@@ -41,6 +41,7 @@ defmodule Scout do
             self = self |> waitfor(self.waitfor -- [a])
 
             if length(self.waitfor) < length(self.acceptors) / 2 do
+              # returns a set of adopted messages to leader
               send(self.leader, {:adopted, self.new_b, self.pvalues})
               send(self.config.monitor, {:SCOUT_FINISHED, self.config.node_num})
               exit(:normal)

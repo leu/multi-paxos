@@ -28,23 +28,25 @@ defmodule Acceptor do
       receive do
         {:p1a, λ, b} ->
           self =
+            # adopts the higher ballot number
             if b > self.ballot_num do
               self |> ballot_num(b)
             else
               self
             end
-
+          # sends current ballot number and all pvalues accepted thus far by the acceptor
           send(λ, {:p1b, self(), self.ballot_num, self.accepted})
           self
 
         {:p2a, λ, {b, s, c}} ->
           self =
+            # accepts the pvalue only if ballot number matches
             if b == self.ballot_num do
               self |> accepted(MapSet.put(self.accepted, {b, s, c}))
             else
               self
             end
-
+          # sends current ballot number 
           send(λ, {:p2b, self(), self.ballot_num})
           self
       end
