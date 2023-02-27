@@ -13,7 +13,6 @@ defmodule Acceptor do
 
   def start(config) do
     config = Configuration.node_info(config, "Acceptor")
-    # Debug.starting(config)
 
     self = %{
       # we treat -1 as false

@@ -29,7 +29,6 @@ defmodule Replica do
 
   def start(config, database) do
     config = Configuration.node_info(config, "Replica")
-    Debug.starting(config)
 
     self = %{
       config: config,

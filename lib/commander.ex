@@ -9,7 +9,6 @@ defmodule Commander do
 
   def start(config, λ, acceptors, replicas, {at_b, s, c}) do
     config = Configuration.node_info(config, "Commander")
-    # Debug.starting(config)
 
     self = %{
       config: config,

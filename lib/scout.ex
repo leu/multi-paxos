@@ -13,7 +13,6 @@ defmodule Scout do
 
   def start(config, λ, acceptors, new_b) do
     config = Configuration.node_info(config, "Scout")
-    # Debug.starting(config)
 
     self = %{
       config: config,
@@ -27,8 +26,6 @@ defmodule Scout do
     for acceptor <- acceptors do
       send(acceptor, {:p1a, self(), new_b})
     end
-
-    # for
 
     self |> next()
   end

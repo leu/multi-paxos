@@ -61,7 +61,6 @@ defmodule Leader do
 
   def start(config) do
     config = Configuration.node_info(config, "Leader")
-    Debug.starting(config)
 
     self = %{
       config: config,
