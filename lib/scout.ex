@@ -1,3 +1,6 @@
+
+# written by Daniel Simols (ds1920) and Benson Zhou (bz620)
+
 defmodule Scout do
 
 #Setters
