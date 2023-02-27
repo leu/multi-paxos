@@ -1,0 +1,262 @@
+mix compile
+--> Starting Multipaxos at multipaxos_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server1 at server1_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server1_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server1_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server3 at server3_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server2 at server2_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server2_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server3_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server2_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server3_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server4 at server4_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server4_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server4_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server5 at server5_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server5_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server5_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server6 at server6_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server6_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server6_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server8 at server8_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server7 at server7_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server8_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server8_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server7_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server9 at server9_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server7_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server9_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server9_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server10 at server10_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server10_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server10_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client1 at client1_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client2 at client2_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client3 at client3_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client4 at client4_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client5 at client5_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client6 at client6_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client7 at client7_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client8 at client8_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client9 at client9_43_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client10 at client10_43_bz620@127.0.0.1 (192.168.122.1)
+time = 1000 client requests seen = 773
+time = 1000     db requests done = [{1, 120}, {2, 130}, {3, 123}, {4, 130}, {5, 128}, {6, 128}, {7, 130}, {8, 128}, {9, 130}, {10, 128}]
+
+time = 2000 client requests seen = 3203
+time = 2000     db requests done = [{1, 501}, {2, 484}, {3, 490}, {4, 494}, {5, 506}, {6, 506}, {7, 506}, {8, 506}, {9, 496}, {10, 506}]
+
+  Client 2 going to sleep, sent = 500
+  Client 5 going to sleep, sent = 500
+  Client 6 going to sleep, sent = 500
+  Client 3 going to sleep, sent = 500
+  Client 1 going to sleep, sent = 500
+  Client 4 going to sleep, sent = 500
+  Client 9 going to sleep, sent = 500
+  Client 7 going to sleep, sent = 500
+  Client 8 going to sleep, sent = 500
+  Client 10 going to sleep, sent = 500
+time = 3000 client requests seen = 5000
+time = 3000     db requests done = [{1, 729}, {2, 722}, {3, 709}, {4, 723}, {5, 724}, {6, 715}, {7, 724}, {8, 734}, {9, 734}, {10, 733}]
+
+time = 4000 client requests seen = 5000
+time = 4000     db requests done = [{1, 1231}, {2, 1231}, {3, 1231}, {4, 1231}, {5, 1210}, {6, 1223}, {7, 1218}, {8, 1203}, {9, 1231}, {10, 1206}]
+
+time = 5000 client requests seen = 5000
+time = 5000     db requests done = [{1, 1420}, {2, 1395}, {3, 1284}, {4, 1434}, {5, 1434}, {6, 1417}, {7, 1427}, {8, 1395}, {9, 1434}, {10, 1389}]
+
+time = 6000 client requests seen = 5000
+time = 6000     db requests done = [{1, 1762}, {2, 1793}, {3, 1793}, {4, 1793}, {5, 1787}, {6, 1792}, {7, 1783}, {8, 1793}, {9, 1793}, {10, 1793}]
+
+time = 7000 client requests seen = 5000
+time = 7000     db requests done = [{1, 1893}, {2, 1856}, {3, 1856}, {4, 1915}, {5, 1856}, {6, 1856}, {7, 1922}, {8, 1856}, {9, 1882}, {10, 1856}]
+
+time = 8000 client requests seen = 5000
+time = 8000     db requests done = [{1, 2246}, {2, 2204}, {3, 2195}, {4, 2242}, {5, 2228}, {6, 2121}, {7, 2226}, {8, 2163}, {9, 2256}, {10, 2231}]
+
+time = 9000 client requests seen = 5000
+time = 9000     db requests done = [{1, 2288}, {2, 2288}, {3, 2288}, {4, 2288}, {5, 2288}, {6, 2288}, {7, 2288}, {8, 2288}, {9, 2288}, {10, 2288}]
+
+time = 10000 client requests seen = 5000
+time = 10000     db requests done = [{1, 2336}, {2, 2449}, {3, 2367}, {4, 2409}, {5, 2408}, {6, 2393}, {7, 2384}, {8, 2435}, {9, 2400}, {10, 2372}]
+
+time = 11000 client requests seen = 5000
+time = 11000     db requests done = [{1, 2496}, {2, 2496}, {3, 2496}, {4, 2496}, {5, 2496}, {6, 2496}, {7, 2496}, {8, 2496}, {9, 2496}, {10, 2496}]
+
+time = 12000 client requests seen = 5000
+time = 12000     db requests done = [{1, 2506}, {2, 2560}, {3, 2560}, {4, 2554}, {5, 2506}, {6, 2503}, {7, 2530}, {8, 2506}, {9, 2563}, {10, 2516}]
+
+time = 13000 client requests seen = 5000
+time = 13000     db requests done = [{1, 2613}, {2, 2613}, {3, 2613}, {4, 2613}, {5, 2613}, {6, 2613}, {7, 2613}, {8, 2613}, {9, 2613}, {10, 2613}]
+
+time = 14000 client requests seen = 5000
+time = 14000     db requests done = [{1, 2680}, {2, 2613}, {3, 2615}, {4, 2615}, {5, 2615}, {6, 2613}, {7, 2710}, {8, 2714}, {9, 2621}, {10, 2706}]
+
+time = 15000 client requests seen = 5000
+time = 15000     db requests done = [{1, 2789}, {2, 2789}, {3, 2789}, {4, 2789}, {5, 2789}, {6, 2789}, {7, 2789}, {8, 2789}, {9, 2789}, {10, 2789}]
+
+time = 16000 client requests seen = 5000
+time = 16000     db requests done = [{1, 2789}, {2, 2789}, {3, 2789}, {4, 2789}, {5, 2789}, {6, 2789}, {7, 2789}, {8, 2789}, {9, 2789}, {10, 2789}]
+
+time = 17000 client requests seen = 5000
+time = 17000     db requests done = [{1, 2807}, {2, 2807}, {3, 2805}, {4, 2807}, {5, 2807}, {6, 2807}, {7, 2807}, {8, 2807}, {9, 2807}, {10, 2807}]
+
+time = 18000 client requests seen = 5000
+time = 18000     db requests done = [{1, 2808}, {2, 2807}, {3, 2807}, {4, 2808}, {5, 2808}, {6, 2807}, {7, 2808}, {8, 2808}, {9, 2808}, {10, 2808}]
+
+time = 19000 client requests seen = 5000
+time = 19000     db requests done = [{1, 2888}, {2, 2826}, {3, 2817}, {4, 2888}, {5, 2888}, {6, 2817}, {7, 2888}, {8, 2888}, {9, 2888}, {10, 2888}]
+
+time = 20000 client requests seen = 5000
+time = 20000     db requests done = [{1, 2889}, {2, 2889}, {3, 2889}, {4, 2889}, {5, 2889}, {6, 2889}, {7, 2889}, {8, 2889}, {9, 2889}, {10, 2889}]
+
+time = 21000 client requests seen = 5000
+time = 21000     db requests done = [{1, 2891}, {2, 2890}, {3, 2890}, {4, 2890}, {5, 2890}, {6, 2890}, {7, 2890}, {8, 2891}, {9, 2890}, {10, 2890}]
+
+time = 22000 client requests seen = 5000
+time = 22000     db requests done = [{1, 2900}, {2, 2900}, {3, 2900}, {4, 2900}, {5, 2900}, {6, 2900}, {7, 2900}, {8, 2900}, {9, 2900}, {10, 2890}]
+
+time = 23000 client requests seen = 5000
+time = 23000     db requests done = [{1, 2919}, {2, 2900}, {3, 2900}, {4, 2900}, {5, 2900}, {6, 2900}, {7, 2919}, {8, 2900}, {9, 2900}, {10, 2900}]
+
+time = 24000 client requests seen = 5000
+time = 24000     db requests done = [{1, 2920}, {2, 2920}, {3, 2920}, {4, 2900}, {5, 2921}, {6, 2920}, {7, 2920}, {8, 2920}, {9, 2920}, {10, 2920}]
+
+time = 25000 client requests seen = 5000
+time = 25000     db requests done = [{1, 2921}, {2, 2921}, {3, 2921}, {4, 2921}, {5, 2921}, {6, 2921}, {7, 2921}, {8, 2921}, {9, 2921}, {10, 2921}]
+
+time = 26000 client requests seen = 5000
+time = 26000     db requests done = [{1, 2931}, {2, 2929}, {3, 2931}, {4, 2929}, {5, 2931}, {6, 2931}, {7, 2931}, {8, 2931}, {9, 2931}, {10, 2922}]
+
+time = 27000 client requests seen = 5000
+time = 27000     db requests done = [{1, 2931}, {2, 2931}, {3, 2931}, {4, 2931}, {5, 2931}, {6, 2931}, {7, 2931}, {8, 2931}, {9, 2931}, {10, 2931}]
+
+time = 28000 client requests seen = 5000
+time = 28000     db requests done = [{1, 2941}, {2, 2931}, {3, 2931}, {4, 2941}, {5, 2941}, {6, 2931}, {7, 2931}, {8, 2941}, {9, 2931}, {10, 2931}]
+
+time = 29000 client requests seen = 5000
+time = 29000     db requests done = [{1, 2941}, {2, 2941}, {3, 2941}, {4, 2943}, {5, 2941}, {6, 2941}, {7, 2941}, {8, 2943}, {9, 2941}, {10, 2941}]
+
+time = 30000 client requests seen = 5000
+time = 30000     db requests done = [{1, 2943}, {2, 2943}, {3, 2943}, {4, 2947}, {5, 2943}, {6, 2943}, {7, 2943}, {8, 2943}, {9, 2943}, {10, 2943}]
+
+time = 31000 client requests seen = 5000
+time = 31000     db requests done = [{1, 2953}, {2, 2947}, {3, 2947}, {4, 2953}, {5, 2947}, {6, 2947}, {7, 2953}, {8, 2953}, {9, 2953}, {10, 2947}]
+
+time = 32000 client requests seen = 5000
+time = 32000     db requests done = [{1, 2953}, {2, 2953}, {3, 2953}, {4, 2953}, {5, 2953}, {6, 2953}, {7, 2953}, {8, 2953}, {9, 2953}, {10, 2953}]
+
+time = 33000 client requests seen = 5000
+time = 33000     db requests done = [{1, 2955}, {2, 2953}, {3, 2954}, {4, 2953}, {5, 2953}, {6, 2953}, {7, 2955}, {8, 2955}, {9, 2953}, {10, 2953}]
+
+time = 34000 client requests seen = 5000
+time = 34000     db requests done = [{1, 2958}, {2, 2955}, {3, 2958}, {4, 2958}, {5, 2958}, {6, 2958}, {7, 2958}, {8, 2968}, {9, 2958}, {10, 2958}]
+
+time = 35000 client requests seen = 5000
+time = 35000     db requests done = [{1, 2969}, {2, 2969}, {3, 2969}, {4, 2969}, {5, 2969}, {6, 2969}, {7, 2969}, {8, 2969}, {9, 2969}, {10, 2969}]
+
+time = 36000 client requests seen = 5000
+time = 36000     db requests done = [{1, 2970}, {2, 2970}, {3, 2970}, {4, 2970}, {5, 2970}, {6, 2970}, {7, 2970}, {8, 2970}, {9, 2974}, {10, 2970}]
+
+time = 37000 client requests seen = 5000
+time = 37000     db requests done = [{1, 2980}, {2, 2974}, {3, 2974}, {4, 2980}, {5, 2974}, {6, 2974}, {7, 2980}, {8, 2974}, {9, 2980}, {10, 2974}]
+
+time = 38000 client requests seen = 5000
+time = 38000     db requests done = [{1, 2980}, {2, 2980}, {3, 2980}, {4, 2980}, {5, 2980}, {6, 2980}, {7, 2980}, {8, 2980}, {9, 2980}, {10, 2980}]
+
+time = 39000 client requests seen = 5000
+time = 39000     db requests done = [{1, 2980}, {2, 2980}, {3, 2985}, {4, 2980}, {5, 2980}, {6, 2980}, {7, 2980}, {8, 2980}, {9, 2980}, {10, 2980}]
+
+time = 40000 client requests seen = 5000
+time = 40000     db requests done = [{1, 2980}, {2, 2990}, {3, 2990}, {4, 2985}, {5, 2980}, {6, 2990}, {7, 2990}, {8, 2990}, {9, 2990}, {10, 2980}]
+
+time = 41000 client requests seen = 5000
+time = 41000     db requests done = [{1, 2990}, {2, 2990}, {3, 2990}, {4, 2990}, {5, 2990}, {6, 2990}, {7, 2990}, {8, 2990}, {9, 2990}, {10, 2990}]
+
+time = 42000 client requests seen = 5000
+time = 42000     db requests done = [{1, 2990}, {2, 2990}, {3, 3000}, {4, 2990}, {5, 2990}, {6, 2990}, {7, 2990}, {8, 2993}, {9, 3000}, {10, 2990}]
+
+time = 43000 client requests seen = 5000
+time = 43000     db requests done = [{1, 2990}, {2, 2990}, {3, 3000}, {4, 2990}, {5, 2993}, {6, 3000}, {7, 2993}, {8, 3000}, {9, 3000}, {10, 2990}]
+
+time = 44000 client requests seen = 5000
+time = 44000     db requests done = [{1, 3000}, {2, 3000}, {3, 3000}, {4, 3000}, {5, 3000}, {6, 3000}, {7, 3000}, {8, 3000}, {9, 3000}, {10, 3000}]
+
+time = 45000 client requests seen = 5000
+time = 45000     db requests done = [{1, 3000}, {2, 3000}, {3, 3000}, {4, 3000}, {5, 3000}, {6, 3000}, {7, 3000}, {8, 3000}, {9, 3000}, {10, 3000}]
+
+time = 46000 client requests seen = 5000
+time = 46000     db requests done = [{1, 3000}, {2, 3000}, {3, 3000}, {4, 3000}, {5, 3000}, {6, 3000}, {7, 3000}, {8, 3000}, {9, 3000}, {10, 3000}]
+
+time = 47000 client requests seen = 5000
+time = 47000     db requests done = [{1, 3000}, {2, 3010}, {3, 3000}, {4, 3000}, {5, 3000}, {6, 3000}, {7, 3000}, {8, 3000}, {9, 3000}, {10, 3000}]
+
+time = 48000 client requests seen = 5000
+time = 48000     db requests done = [{1, 3010}, {2, 3010}, {3, 3010}, {4, 3000}, {5, 3010}, {6, 3010}, {7, 3010}, {8, 3010}, {9, 3010}, {10, 3000}]
+
+time = 49000 client requests seen = 5000
+time = 49000     db requests done = [{1, 3010}, {2, 3010}, {3, 3010}, {4, 3010}, {5, 3010}, {6, 3010}, {7, 3010}, {8, 3010}, {9, 3010}, {10, 3010}]
+
+time = 50000 client requests seen = 5000
+time = 50000     db requests done = [{1, 3020}, {2, 3014}, {3, 3010}, {4, 3010}, {5, 3020}, {6, 3014}, {7, 3014}, {8, 3020}, {9, 3020}, {10, 3010}]
+
+time = 51000 client requests seen = 5000
+time = 51000     db requests done = [{1, 3020}, {2, 3020}, {3, 3014}, {4, 3014}, {5, 3020}, {6, 3020}, {7, 3020}, {8, 3020}, {9, 3020}, {10, 3020}]
+
+time = 52000 client requests seen = 5000
+time = 52000     db requests done = [{1, 3020}, {2, 3020}, {3, 3020}, {4, 3020}, {5, 3020}, {6, 3020}, {7, 3020}, {8, 3020}, {9, 3020}, {10, 3020}]
+
+time = 53000 client requests seen = 5000
+time = 53000     db requests done = [{1, 3020}, {2, 3020}, {3, 3020}, {4, 3020}, {5, 3020}, {6, 3020}, {7, 3020}, {8, 3020}, {9, 3020}, {10, 3020}]
+
+time = 54000 client requests seen = 5000
+time = 54000     db requests done = [{1, 3020}, {2, 3020}, {3, 3020}, {4, 3020}, {5, 3020}, {6, 3020}, {7, 3020}, {8, 3020}, {9, 3020}, {10, 3020}]
+
+time = 55000 client requests seen = 5000
+time = 55000     db requests done = [{1, 3020}, {2, 3020}, {3, 3020}, {4, 3020}, {5, 3020}, {6, 3020}, {7, 3020}, {8, 3020}, {9, 3020}, {10, 3020}]
+
+time = 56000 client requests seen = 5000
+time = 56000     db requests done = [{1, 3020}, {2, 3020}, {3, 3020}, {4, 3020}, {5, 3020}, {6, 3020}, {7, 3020}, {8, 3020}, {9, 3020}, {10, 3020}]
+
+time = 57000 client requests seen = 5000
+time = 57000     db requests done = [{1, 3030}, {2, 3029}, {3, 3030}, {4, 3030}, {5, 3030}, {6, 3030}, {7, 3030}, {8, 3029}, {9, 3030}, {10, 3020}]
+
+  Node server8_43_bz620@127.0.0.1 exiting - maxtime reached
+  Node client4_43_bz620@127.0.0.1 exiting - maxtime reached
+time = 58000 client requests seen = 5000
+time = 58000     db requests done = [{1, 3031}, {2, 3031}, {3, 3031}, {4, 3031}, {5, 3031}, {6, 3031}, {7, 3031}, {8, 3031}, {9, 3031}, {10, 3030}]
+
+  Node server7_43_bz620@127.0.0.1 exiting - maxtime reached
+  Node server2_43_bz620@127.0.0.1 exiting - maxtime reached
+  Node server3_43_bz620@127.0.0.1 exiting - maxtime reached
+  Node client3_43_bz620@127.0.0.1 exiting - maxtime reached
+  Node server10_43_bz620@127.0.0.1 exiting - maxtime reached
+  Node client2_43_bz620@127.0.0.1 exiting - maxtime reached
+  Node server9_43_bz620@127.0.0.1 exiting - maxtime reached
+  Node server6_43_bz620@127.0.0.1 exiting - maxtime reached
+  Node server4_43_bz620@127.0.0.1 exiting - maxtime reached
+  Node client7_43_bz620@127.0.0.1 exiting - maxtime reached
+  Node client8_43_bz620@127.0.0.1 exiting - maxtime reached
+  Node client9_43_bz620@127.0.0.1 exiting - maxtime reached
+  Node client6_43_bz620@127.0.0.1 exiting - maxtime reached
+  Node server5_43_bz620@127.0.0.1 exiting - maxtime reached
+  Node client1_43_bz620@127.0.0.1 exiting - maxtime reached
+time = 59000 client requests seen = 5000
+time = 59000     db requests done = [{1, 3031}, {2, 3031}, {3, 3031}, {4, 3031}, {5, 3031}, {6, 3031}, {7, 3031}, {8, 3031}, {9, 3031}, {10, 3031}]
+
+
+13:09:48.979 [warning] 'global' at node :"multipaxos_43_bz620@127.0.0.1" requested disconnect from node :"client4_43_bz620@127.0.0.1" in order to prevent overlapping partitions
+  Node client5_43_bz620@127.0.0.1 exiting - maxtime reached
+
+13:09:48.979 [warning] 'global' at node :"client5_43_bz620@127.0.0.1" requested disconnect from node :"client4_43_bz620@127.0.0.1" in order to prevent overlapping partitions
+  Node server1_43_bz620@127.0.0.1 exiting - maxtime reached
+
+13:09:48.979 [warning] 'global' at node :"client1_43_bz620@127.0.0.1" requested disconnect from node :"client4_43_bz620@127.0.0.1" in order to prevent overlapping partitions
+  Node client10_43_bz620@127.0.0.1 exiting - maxtime reached
+  Node multipaxos_43_bz620@127.0.0.1 exiting - maxtime reached
+
+13:09:48.983 [warning] 'global' at node :"server1_43_bz620@127.0.0.1" requested disconnect from node :"client4_43_bz620@127.0.0.1" in order to prevent overlapping partitions
+time = 60000 client requests seen = 5000
+time = 60000     db requests done = [{1, 3031}, {2, 3031}, {3, 3038}, {4, 3031}, {5, 3031}, {6, 3031}, {7, 3031}, {8, 3031}, {9, 3031}, {10, 3031}]
+
+make: *** [Makefile:51: run] Error 1
