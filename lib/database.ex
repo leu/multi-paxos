@@ -14,7 +14,6 @@ def start config do
 end # start
 
 defp next(self) do
-  Debug.letter(self.config, "D")
   receive do
   { :EXECUTE, transaction } ->
     { :MOVE, amount, account1, account2 } = transaction
