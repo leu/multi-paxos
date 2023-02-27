@@ -1,0 +1,72 @@
+mix compile
+Compiling 1 file (.ex)
+--> Starting Multipaxos at multipaxos_42_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server1 at server1_42_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server1_42_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server1_42_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server2 at server2_42_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server3 at server3_42_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server2_42_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server3_42_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server2_42_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server3_42_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server4 at server4_42_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server5 at server5_42_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server4_42_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server4_42_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server5_42_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server5_42_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client1 at client1_42_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client2 at client2_42_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client3 at client3_42_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client4 at client4_42_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client5 at client5_42_bz620@127.0.0.1 (192.168.122.1)
+time = 1000 client requests seen = 1272
+time = 1000     db requests done = [{1, 987}, {2, 1007}, {3, 1011}, {4, 967}, {5, 1013}]
+
+  Client 2 going to sleep, sent = 500
+  Client 3 going to sleep, sent = 500
+  Client 1 going to sleep, sent = 500
+  Client 4 going to sleep, sent = 500
+  Client 5 going to sleep, sent = 500
+time = 2000 client requests seen = 2500
+time = 2000     db requests done = [{1, 1931}, {2, 1929}, {3, 1929}, {4, 1929}, {5, 1933}]
+
+time = 3000 client requests seen = 2500
+time = 3000     db requests done = [{1, 1984}, {2, 1985}, {3, 1986}, {4, 1985}, {5, 1985}]
+
+time = 4000 client requests seen = 2500
+time = 4000     db requests done = [{1, 2025}, {2, 2077}, {3, 2069}, {4, 2096}, {5, 2088}]
+
+time = 5000 client requests seen = 2500
+time = 5000     db requests done = [{1, 2110}, {2, 2110}, {3, 2110}, {4, 2110}, {5, 2110}]
+
+time = 6000 client requests seen = 2500
+time = 6000     db requests done = [{1, 2332}, {2, 2282}, {3, 2355}, {4, 2289}, {5, 2382}]
+
+time = 7000 client requests seen = 2500
+time = 7000     db requests done = [{1, 2404}, {2, 2404}, {3, 2404}, {4, 2404}, {5, 2404}]
+
+time = 8000 client requests seen = 2500
+time = 8000     db requests done = [{1, 2471}, {2, 2497}, {3, 2413}, {4, 2471}, {5, 2500}]
+
+time = 9000 client requests seen = 2500
+time = 9000     db requests done = [{1, 2500}, {2, 2500}, {3, 2500}, {4, 2500}, {5, 2500}]
+
+time = 10000 client requests seen = 2500
+time = 10000     db requests done = [{1, 2500}, {2, 2500}, {3, 2500}, {4, 2500}, {5, 2500}]
+
+time = 11000 client requests seen = 2500
+time = 11000     db requests done = [{1, 2500}, {2, 2500}, {3, 2500}, {4, 2500}, {5, 2500}]
+
+time = 12000 client requests seen = 2500
+time = 12000     db requests done = [{1, 2500}, {2, 2500}, {3, 2500}, {4, 2500}, {5, 2500}]
+
+time = 13000 client requests seen = 2500
+time = 13000     db requests done = [{1, 2500}, {2, 2500}, {3, 2500}, {4, 2500}, {5, 2500}]
+
+time = 14000 client requests seen = 2500
+time = 14000     db requests done = [{1, 2500}, {2, 2500}, {3, 2500}, {4, 2500}, {5, 2500}]
+
+time = 15000 client requests seen = 2500
+time = 15000     db requests done = [{1, 2500}, {2, 2500}, {3, 2500}, {4, 2500}, {5, 2500}]

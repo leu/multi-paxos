@@ -1,0 +1,81 @@
+mix compile
+Compiling 1 file (.ex)
+--> Starting Multipaxos at multipaxos_38_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server1 at server1_38_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server2 at server2_38_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server1_38_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server1_38_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server2_38_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server2_38_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server4 at server4_38_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server3 at server3_38_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server3_38_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server3_38_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server4_38_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server4_38_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server5 at server5_38_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server5_38_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client1 at client1_38_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server5_38_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client2 at client2_38_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client3 at client3_38_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client4 at client4_38_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client5 at client5_38_bz620@127.0.0.1 (192.168.122.1)
+time = 1000 client requests seen = 658
+time = 1000     db requests done = [{1, 374}, {2, 352}, {3, 359}, {4, 372}, {5, 375}]
+
+time = 2000 client requests seen = 2269
+time = 2000     db requests done = [{1, 957}, {2, 966}, {3, 922}, {4, 966}, {5, 948}]
+
+  Client 4 going to sleep, sent = 500
+  Client 1 going to sleep, sent = 500
+  Client 2 going to sleep, sent = 500
+  Client 5 going to sleep, sent = 500
+  Client 3 going to sleep, sent = 500
+time = 3000 client requests seen = 2500
+time = 3000     db requests done = [{1, 1185}, {2, 1189}, {3, 1189}, {4, 1166}, {5, 1147}]
+
+time = 4000 client requests seen = 2500
+time = 4000     db requests done = [{1, 1426}, {2, 1466}, {3, 1483}, {4, 1492}, {5, 1476}]
+
+time = 5000 client requests seen = 2500
+time = 5000     db requests done = [{1, 1541}, {2, 1541}, {3, 1541}, {4, 1541}, {5, 1541}]
+
+time = 6000 client requests seen = 2500
+time = 6000     db requests done = [{1, 1839}, {2, 1833}, {3, 1840}, {4, 1840}, {5, 1810}]
+
+time = 7000 client requests seen = 2500
+time = 7000     db requests done = [{1, 2082}, {2, 2082}, {3, 2082}, {4, 2082}, {5, 2082}]
+
+time = 8000 client requests seen = 2500
+time = 8000     db requests done = [{1, 2082}, {2, 2082}, {3, 2082}, {4, 2082}, {5, 2082}]
+
+time = 9000 client requests seen = 2500
+time = 9000     db requests done = [{1, 2129}, {2, 2129}, {3, 2129}, {4, 2129}, {5, 2129}]
+
+time = 10000 client requests seen = 2500
+time = 10000     db requests done = [{1, 2129}, {2, 2129}, {3, 2129}, {4, 2129}, {5, 2129}]
+
+time = 11000 client requests seen = 2500
+time = 11000     db requests done = [{1, 2229}, {2, 2214}, {3, 2214}, {4, 2229}, {5, 2229}]
+
+time = 12000 client requests seen = 2500
+time = 12000     db requests done = [{1, 2229}, {2, 2229}, {3, 2229}, {4, 2229}, {5, 2229}]
+
+time = 13000 client requests seen = 2500
+time = 13000     db requests done = [{1, 2233}, {2, 2233}, {3, 2231}, {4, 2231}, {5, 2233}]
+
+time = 14000 client requests seen = 2500
+time = 14000     db requests done = [{1, 2233}, {2, 2233}, {3, 2233}, {4, 2233}, {5, 2233}]
+
+time = 15000 client requests seen = 2500
+time = 15000     db requests done = [{1, 2233}, {2, 2233}, {3, 2233}, {4, 2233}, {5, 2233}]
+
+time = 16000 client requests seen = 2500
+time = 16000     db requests done = [{1, 2233}, {2, 2233}, {3, 2233}, {4, 2233}, {5, 2233}]
+
+time = 17000 client requests seen = 2500
+time = 17000     db requests done = [{1, 2233}, {2, 2233}, {3, 2233}, {4, 2233}, {5, 2233}]
+
+time = 18000 client requests seen = 2500
+time = 18000     db requests done = [{1, 2233}, {2, 2233}, {3, 2233}, {4, 2233}, {5, 2233}]
