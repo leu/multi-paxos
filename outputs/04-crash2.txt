@@ -1,0 +1,98 @@
+mix compile
+Compiling 1 file (.ex)
+--> Starting Multipaxos at multipaxos_10_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server1 at server1_10_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server1_10_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server1_10_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server2 at server2_10_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server2_10_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server3 at server3_10_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server3_10_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server2_10_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server3_10_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server4 at server4_10_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server4_10_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server4_10_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Server5 at server5_10_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Replica at server5_10_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Leader at server5_10_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client1 at client1_10_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client2 at client2_10_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client3 at client3_10_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client4 at client4_10_bz620@127.0.0.1 (192.168.122.1)
+--> Starting Client5 at client5_10_bz620@127.0.0.1 (192.168.122.1)
+time = 1000 client requests seen = 1211
+time = 1000     db requests done = [{1, 947}, {2, 941}, {3, 948}, {4, 949}, {5, 950}]
+
+  Server 3 crashed at time 1500
+  Client 1 going to sleep, sent = 500
+  Client 3 going to sleep, sent = 500
+  Client 2 going to sleep, sent = 500
+  Client 5 going to sleep, sent = 500
+  Client 4 going to sleep, sent = 500
+time = 2000 client requests seen = 2419
+time = 2000     db requests done = [{1, 2053}, {2, 2047}, {3, 1542}, {4, 2033}, {5, 2047}]
+
+  Server 5 crashed at time 2500
+time = 3000 client requests seen = 2419
+time = 3000     db requests done = [{1, 2130}, {2, 2130}, {3, 1542}, {4, 2130}, {5, 2097}]
+
+time = 4000 client requests seen = 2419
+time = 4000     db requests done = [{1, 2130}, {2, 2130}, {3, 1542}, {4, 2130}, {5, 2097}]
+
+time = 5000 client requests seen = 2419
+time = 5000     db requests done = [{1, 2130}, {2, 2130}, {3, 1542}, {4, 2130}, {5, 2097}]
+
+time = 6000 client requests seen = 2419
+time = 6000     db requests done = [{1, 2130}, {2, 2130}, {3, 1542}, {4, 2130}, {5, 2097}]
+
+time = 7000 client requests seen = 2419
+time = 7000     db requests done = [{1, 2130}, {2, 2130}, {3, 1542}, {4, 2130}, {5, 2097}]
+
+time = 8000 client requests seen = 2419
+time = 8000     db requests done = [{1, 2130}, {2, 2130}, {3, 1542}, {4, 2130}, {5, 2097}]
+
+time = 9000 client requests seen = 2419
+time = 9000     db requests done = [{1, 2130}, {2, 2130}, {3, 1542}, {4, 2130}, {5, 2097}]
+
+time = 10000 client requests seen = 2419
+time = 10000     db requests done = [{1, 2130}, {2, 2130}, {3, 1542}, {4, 2130}, {5, 2097}]
+
+time = 11000 client requests seen = 2419
+time = 11000     db requests done = [{1, 2130}, {2, 2130}, {3, 1542}, {4, 2130}, {5, 2097}]
+
+time = 12000 client requests seen = 2419
+time = 12000     db requests done = [{1, 2130}, {2, 2130}, {3, 1542}, {4, 2130}, {5, 2097}]
+
+time = 13000 client requests seen = 2419
+time = 13000     db requests done = [{1, 2130}, {2, 2130}, {3, 1542}, {4, 2130}, {5, 2097}]
+
+time = 14000 client requests seen = 2419
+time = 14000     db requests done = [{1, 2130}, {2, 2130}, {3, 1542}, {4, 2130}, {5, 2097}]
+
+time = 15000 client requests seen = 2419
+time = 15000     db requests done = [{1, 2130}, {2, 2130}, {3, 1542}, {4, 2130}, {5, 2097}]
+
+time = 16000 client requests seen = 2419
+time = 16000     db requests done = [{1, 2130}, {2, 2130}, {3, 1542}, {4, 2130}, {5, 2097}]
+
+time = 17000 client requests seen = 2419
+time = 17000     db requests done = [{1, 2130}, {2, 2130}, {3, 1542}, {4, 2130}, {5, 2097}]
+
+time = 18000 client requests seen = 2419
+time = 18000     db requests done = [{1, 2130}, {2, 2130}, {3, 1542}, {4, 2130}, {5, 2097}]
+
+time = 19000 client requests seen = 2419
+time = 19000     db requests done = [{1, 2130}, {2, 2130}, {3, 1542}, {4, 2130}, {5, 2097}]
+
+time = 20000 client requests seen = 2419
+time = 20000     db requests done = [{1, 2130}, {2, 2130}, {3, 1542}, {4, 2130}, {5, 2097}]
+
+time = 21000 client requests seen = 2419
+time = 21000     db requests done = [{1, 2130}, {2, 2130}, {3, 1542}, {4, 2130}, {5, 2097}]
+
+time = 22000 client requests seen = 2419
+time = 22000     db requests done = [{1, 2130}, {2, 2130}, {3, 1542}, {4, 2130}, {5, 2097}]
+
+time = 23000 client requests seen = 2419
+time = 23000     db requests done = [{1, 2130}, {2, 2130}, {3, 1542}, {4, 2130}, {5, 2097}]
