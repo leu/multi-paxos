@@ -2,8 +2,6 @@
 # written by Daniel Simols (ds1920) and Benson Zhou (bz620)
 
 defmodule Acceptor do
-
-defmodule Acceptor do
   # Setters
   defp ballot_num(self, v) do
     Map.put(self, :ballot_num, v)
